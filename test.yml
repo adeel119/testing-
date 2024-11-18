@@ -1,13 +1,14 @@
 ---
-- name: testing server's root space 
-  hosts: all 
-  become: yes 
-  
+- name: checking root file system
+  hosts: all
+  become: yes
+
   tasks:
-    - name: running shell command 
-      shell: df -h /
-      register: disk_space 
-      
-    - name: Display disk space 
+    - name: checkin root file system for space
+      shell:
+        df -h / > /home/diskspace
+      register: disk_space
+
+    - name: result
       debug:
         var: disk_space.stdout
