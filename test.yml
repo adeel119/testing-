@@ -4,6 +4,6 @@
   become: yes 
 
   tasks:
-     - name: running shel comand 
-       shell: df -h /
-       register: disk_space 
+   - name: running shel comand 
+     shell: df -h /
+     register: disk_space 
