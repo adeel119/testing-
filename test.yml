@@ -1,0 +1,6 @@
+---
+- name: testing server's root space 
+  hosts: all 
+  become: yes 
+- name: running shel comand 
+  command: df -h /
