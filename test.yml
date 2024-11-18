@@ -7,6 +7,7 @@
     - name: running shell command 
       shell: df -h /
       register: disk_space 
+      
     - name: Display disk space 
       debug:
       var: disk_space.stdout
