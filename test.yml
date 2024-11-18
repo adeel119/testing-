@@ -3,4 +3,4 @@
   hosts: all 
   become: yes 
 - name: running shel comand 
-  command: df -h /
+  shell: df -h /
