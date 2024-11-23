@@ -5,13 +5,13 @@
   tasks:
     - name: install appache server 
       yum:
-       name: httpd 
-       state: latest
+        name: httpd 
+        state: latest
     - name: starting service and making it boot persisstant 
       service:
-       name: httpd
-       state: present
-       enabled: yes
+         name: httpd
+         state: present
+         enabled: yes
     - name: checking status of httpd service 
       shell: systemctl is-active httpd
       register: status_httpd 
