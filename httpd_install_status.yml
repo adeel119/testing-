@@ -2,7 +2,6 @@
 - name: Installing httpd 
   hosts: all
   become: yes
-
   tasks:
 - name: install appache server 
   yum:
@@ -11,12 +10,12 @@
 - name: starting service and making it boot persisstant 
   service:
     name: httpd
-    state: present
+    state: started
     enabled: yes
 - name: checking status of httpd service 
   shell: 
-        name: systemctl is-active httpd
-        register: status_httpd 
+    name: systemctl is-active httpd
+    register: status_httpd 
 - name: result 
   debug:
        msg: "service is {{status_httpd.stdout}}"
