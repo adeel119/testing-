@@ -11,7 +11,7 @@
     - name: starting service and making it boot persisstant 
       service:
         name: httpd
-        status: started
+        state: started
        enabled: yes
     - name: checking status of httpd service 
       shell: systemctl status sshd
