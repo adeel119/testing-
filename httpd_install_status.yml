@@ -1,23 +1,24 @@
 ---
-- name: Installing httpd 
+- name: Installing httpd
   hosts: all
   become: yes
   tasks:
-    - name: install appache server 
+    - name: Install Apache server
       yum:
         name: httpd 
         state: latest
-    - name: starting service and making it boot persisstant 
-      service:
-         name: httpd
-         state: started
-         enabled: yes
-    - name: check status of httpd service 
-      shell: systemctl is-active httpd
-      register: status_httpd 
-    - name: Result 
-      debug:
-       msg: "Service is {{status_httpd.stdout}}"
-        
 
-    
+    - name: Start service and make it boot persistent
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+
+    - name: Check status of httpd service
+      shell: systemctl is-active httpd
+      register: status_httpd
+
+    - name: Result
+      debug:
+        msg: "Service is {{ status_httpd.stdout }}"
+
