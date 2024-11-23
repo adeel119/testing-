@@ -12,7 +12,7 @@
       service:
         name: httpd
         state: started
-       enabled: yes
+        enabled: yes
     - name: checking status of httpd service 
       shell: systemctl status sshd
         name: httpd
