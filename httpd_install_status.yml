@@ -12,10 +12,10 @@
          name: httpd
          state: started
          enabled: yes
-    - name: checking status of httpd service 
+    - name: check status of httpd service 
       shell: systemctl is-active httpd
       register: status_httpd 
-    - name: result 
+    - name: Result 
       debug:
        msg: "Service is {{status_httpd.stdout}}"
         
