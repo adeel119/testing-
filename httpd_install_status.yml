@@ -20,5 +20,5 @@
 
     - name: Result
       debug:
-        msg: "Service is {{ status_httpd.stdout }}"
+        msg: "Service is {{status_httpd.stdout}}"
 
