@@ -7,17 +7,17 @@
       yum:
        name: httpd 
        state: latest
-   - name: starting service and making it boot persisstant 
-     service:
-      name: httpd
-      state: started
-      enabled: yes
-   - name: checking status of httpd service 
-     shell: 
-      name: systemctl is-active httpd
-      register: status_httpd 
-   - name: result 
-     debug:
+    - name: starting service and making it boot persisstant 
+      service:
+       name: httpd
+       state: started
+       enabled: yes
+    - name: checking status of httpd service 
+      shell: 
+       name: systemctl is-active httpd
+       register: status_httpd 
+    - name: result 
+      debug:
        msg: "service is {{status_httpd.stdout}}"
         
 
