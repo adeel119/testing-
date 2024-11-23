@@ -9,8 +9,9 @@
        name: httpd 
        state: latest
     - name: starting service and making it boot persisstant 
-      service: 
-       status: started
+      service:
+        name: httpd
+        status: started
        enabled: yes
     - name: checking status of httpd service 
       shell: systemctl status sshd
