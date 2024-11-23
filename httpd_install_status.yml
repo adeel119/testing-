@@ -13,8 +13,7 @@
        state: started
        enabled: yes
     - name: checking status of httpd service 
-      shell: 
-       name: systemctl is-active httpd
+      shell: systemctl is-active httpd
        register: status_httpd 
     - name: result 
       debug:
