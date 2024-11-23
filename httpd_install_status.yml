@@ -5,7 +5,7 @@
 
   tasks:
 - name: install appache server 
-  shell:
+  yum:
     name: httpd 
     state: latest
 - name: starting service and making it boot persisstant 
