@@ -17,7 +17,7 @@
        register: status_httpd 
     - name: result 
        debug:
-       msg: service is '{{status_httpd.stdout}}
+       msg: "service is {{status_httpd.stdout}}"
         
 
     
